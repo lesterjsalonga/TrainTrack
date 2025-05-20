@@ -1,0 +1,226 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  
+  /* Container */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Shared Card Style */
+  .login-card, .register-card, .profile-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+  }
+  
+  .login-card:hover,
+  .register-card:hover,
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .login-card h2,
+  .register-card h2,
+  .profile-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0059b3;
+    font-size: 26px;
+  }
+  
+  /* Labels and Inputs */
+  label {
+    font-weight: 600;
+    margin-top: 14px;
+    display: block;
+    color: #444;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007acc;
+    outline: none;
+  }
+  
+  /* Buttons */
+  button, .logout-btn, .upload-section button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: #0059b3;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 89, 179, 0.3);
+  }
+  
+  button:hover,
+  .logout-btn:hover,
+  .upload-section button:hover,
+  .profile-toggle-section button:hover {
+    background: #004080;
+  }
+  
+  /* Link Styling */
+  a {
+    color: #007acc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-card p,
+  .register-card p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  /* Checkbox Row */
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  
+  /* Dashboard */
+  .dashboard {
+    padding: 30px;
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  
+  header h1 {
+    font-size: 26px;
+    color: #0059b3;
+  }
+  
+  .logout-btn {
+    max-width: 120px;
+    background: #e60000;
+  }
+  
+  .logout-btn:hover {
+    background: #cc0000;
+  }
+  
+  /* Upload & Status Sections */
+  .upload-section, .status-section {
+    margin-top: 25px;
+  }
+  
+  .upload-section input[type="file"] {
+    margin-top: 12px;
+  }
+  
+  .status-box {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .status-box.pending {
+    background-color: #ffa500;
+  }
+  
+  .status-box.approved {
+    background-color: #28a745;
+  }
+  
+  .status-box.rejected {
+    background-color: #dc3545;
+  }
+  
+  /* Profile Card */
+  .profile-card form label {
+    margin-top: 12px;
+  }
+  
+  .profile-card form input {
+    margin-bottom: 16px;
+  }
+  
+  .profile-toggle-section button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .login-card, .register-card, .profile-card {
+      padding: 20px;
+      margin: 0 10px;
+    }
+  
+    .dashboard {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    header h1 {
+      font-size: 20px;
+    }
+  }
+  
+
+
+  /*ADMIN CSS*/
+  

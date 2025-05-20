@@ -1,0 +1,252 @@
+/* ================= GENERAL STYLES ================= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ================= LOGIN / REGISTER CARD ================= */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox-row {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error or Info Message */
+p.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Link Styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= DASHBOARD STYLES ================= */
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.logout {
+  background-color: #34495e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.logout:hover {
+  background-color: #2c3e50;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ================= TABLE BUTTONS ================= */
+.btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  margin: 2px;
+}
+
+.btn.approve {
+  background-color: #27ae60;
+}
+
+.btn.approve:hover {
+  background-color: #1e8449;
+}
+
+.btn.reject {
+  background-color: #e74c3c;
+}
+
+.btn.reject:hover {
+  background-color: #c0392b;
+}
+
+.btn.download {
+  background-color: #3498db;
+  text-decoration: none;
+  padding: 6px 10px;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.btn.download:hover {
+  background-color: #2980b9;
+}
+
+/* ================= RESPONSIVE TABLE ================= */
+@media screen and (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #333;
+  }
+}
