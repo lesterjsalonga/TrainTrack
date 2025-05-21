@@ -501,7 +501,7 @@ if ($search !== '') {
                                 <input type="hidden" name="resume_id" value="<?= $row['id'] ?>">
                                 <input type="hidden" name="student_id" value="<?= $row['student_id'] ?>">
                                 <button class="btn approve" type="submit" name="action" value="approve" onclick="return showMeetingForm(this)">Approve</button>
-                                <button class="btn reject" type="submit" name="action" value="reject">Reject</button>
+                                <button class="btn reject" type="submit" name="action" value="reject" onclick="return showRejectForm(this)">Reject</button>
                             </form>
                             <form method="POST" class="inline-form" style="margin-left:8px;" onsubmit="return confirm('Are you sure you want to delete this resume?');">
                                 <input type="hidden" name="delete_resume_id" value="<?= $row['id'] ?>">
@@ -571,6 +571,25 @@ if ($search !== '') {
     </form>
 </div>
 
+<!-- Add Rejection Form Modal -->
+<div class="meeting-form" id="rejectForm" style="display: none;">
+    <h3>Reject Application</h3>
+    <form method="POST" id="rejectFormSubmit">
+        <input type="hidden" name="resume_id" id="reject_resume_id">
+        <input type="hidden" name="action" value="reject">
+        
+        <div class="form-group">
+            <label for="reject_remark">Rejection Reason</label>
+            <textarea id="reject_remark" name="remark" rows="4" placeholder="Please provide a reason for rejecting this application..." required></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-danger">Reject Application</button>
+            <button type="button" class="btn btn-secondary" onclick="hideRejectForm()">Cancel</button>
+        </div>
+    </form>
+</div>
+
 <script>
 function showMeetingForm(button) {
     const form = button.closest('form');
@@ -591,8 +610,28 @@ function hideMeetingForm() {
     document.getElementById('meetingForm').style.display = 'none';
 }
 
+function showRejectForm(button) {
+    const form = button.closest('form');
+    const resumeId = form.querySelector('input[name="resume_id"]').value;
+    
+    document.getElementById('reject_resume_id').value = resumeId;
+    
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('rejectForm').style.display = 'block';
+    
+    return false; // Prevent form submission
+}
+
+function hideRejectForm() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('rejectForm').style.display = 'none';
+}
+
 // Close form when clicking outside
-document.getElementById('overlay').addEventListener('click', hideMeetingForm);
+document.getElementById('overlay').addEventListener('click', function() {
+    hideMeetingForm();
+    hideRejectForm();
+});
 </script>
 
 </body>
